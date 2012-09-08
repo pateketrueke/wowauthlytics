@@ -1,0 +1,11 @@
+{
+    "require": {
+        "kriswallsmith/buzz": "dev-master",
+        "widop/http-adapter-bundle": "dev-master",
+        "widop/google-analytics-bundle": "dev-master",
+        "simonchrz/mailchimp": "dev-master",
+        "facebook/php-sdk": "dev-master",
+        "dg/twitter-php": "dev-master",
+        "zend/gdata": "dev-master"
+    }
+}
