@@ -6,6 +6,9 @@
         "simonchrz/mailchimp": "dev-master",
         "facebook/php-sdk": "dev-master",
         "dg/twitter-php": "dev-master",
-        "zend/gdata": "dev-master"
+        "zend/gdata": "dev-master",
+
+        "habanero/broil": "dev-master",
+        "habanero/postman": "dev-master"
     }
 }
