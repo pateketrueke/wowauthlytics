@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^www\.wowauthlytics\.co$
+RewriteRule ^(.*)$ http://wowauthlytics.co/$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond $1 !^(application|requires|vendor|deploy|exclude|index\.php) [NC]
+RewriteRule ^(.*)$ index.php/$1 [PT,L]
