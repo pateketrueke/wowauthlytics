@@ -76,4 +76,13 @@ switch ($action) {
     }
 
     return partial('missing.php', $vars);
+  case 'data';
+    $params = $_GET;
+    $data_script = "$provider/data.php";
+
+    if (isset($params['id'])) {
+      unset($params['id']);
+    }
+
+    return require $data_script;
 }
