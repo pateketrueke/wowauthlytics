@@ -12,20 +12,7 @@ $provider = array(
     'account_id' => array('integer'),
   );
 
-$service = array(
-    'id' => array('primary_key'),
-    'provider_id' => array('integer'),
-    'config' => array('text'),
-    'name' => array('string'),
-  );
-
-$datum = array(
-    'id' => array('primary_key'),
-    'name' => array('string'),
-    'value' => array('text'),
-  );
-
-foreach (array('account', 'provider', 'service', 'datum') as $table) {
+foreach (array('account', 'provider') as $table) {
   ! isset($db[$table]) && $db[$table] = $$table;
 
   $columns = $db[$table]->columns();
