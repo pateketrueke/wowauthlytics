@@ -23,9 +23,9 @@ if ( ! empty($params['ga'])) {
           ! empty($params['type']) ? $params['type'] : 'ga:visits',
           array(
               'dimensions' => ! empty($params['dims']) ? $params['dims'] : 'ga:source,ga:keyword',
-              'sort' => ! empty($params['sort']) ? $params['sort'] : '-ga:visits,ga:month',
+              'sort' => ! empty($params['sort']) ? $params['sort'] : '-ga:visits,ga:keyword',
               'filters' => ! empty($params['filter']) ? $params['filter'] : 'ga:medium==organic',
-              'max-results' => ! empty($params['max']) ? $params['max'] : 100));
+              'max-results' => ! empty($params['max']) ? $params['max'] : '100'));
 
   return $data;
 }
