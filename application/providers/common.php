@@ -21,16 +21,7 @@ switch ($action) {
           return array('error' => "no $provider provider");
         } else {
           $provider = $db['provider']->select('*', $data)->fetch();
-
-          $result = array('found' => TRUE);
-          $result['services'] = array();
-
-          $db['service']->where(array('provider_id' => $provider->id))->each(function ($service)
-            use (&$result) {
-              $result['services'] []= $service->name;
-            });
-
-          return $result;
+          return array('found' => TRUE);
         }
       break;
       case 'POST';
