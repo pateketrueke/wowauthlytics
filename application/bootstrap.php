@@ -1,7 +1,7 @@
 <?php
 
 get('/', function () { echo 'It works!'; });
-get('/done', function () { echo partial('done.php', $_GET); });
+
 
 $account_params = array();
 $account_callback = function () {
