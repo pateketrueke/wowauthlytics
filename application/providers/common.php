@@ -63,13 +63,13 @@ switch ($action) {
     $data = array('name' => $provider, 'account_id' => $account->id);
     $auth_data = require $auth_script;
 
-    if (is_array($auth_data)) {
+    if ( ! isset($login_url)) {
       if ($exists) {
         $where = $data;
-        $data['params'] = serialize($auth_data);
+        $data['params'] = json_encode(array('raw' => $auth_data));
         $db['provider']->update($data, $where);
       } else {
-        $data['params'] = serialize($auth_data);
+        $data['params'] = json_encode(array('raw' => $auth_data));
         $db['provider']->insert($data);
       }
       redirect(url("$provider?id=$user_id"));
