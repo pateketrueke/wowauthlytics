@@ -10,7 +10,6 @@
 
         "habanero/broil": "dev-master",
         "habanero/tailor": "dev-master",
-        "habanero/postman": "dev-master",
-        "habanero/grocery": "dev-master"
+        "habanero/postman": "dev-master"
     }
 }
