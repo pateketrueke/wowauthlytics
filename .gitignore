@@ -1,3 +1,4 @@
 vendor
+libraries
 composer.lock
 application/database/db.sqlite
