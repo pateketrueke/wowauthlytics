@@ -30,7 +30,7 @@ switch ($action) {
     switch ($method) {
       case 'GET';
         if ( ! $exists) {
-          return array('error' => "no $provider provider", 'login' => url("$provider/auth?id=$user_id"));
+          return array('error' => "no $provider provider");
         } else {
           $provider = $db['provider']->select('*', $data)->fetch();
           return array('found' => TRUE);
@@ -58,7 +58,7 @@ switch ($action) {
     }
   case 'auth';
     $auth_script = "$provider/auth.php";
-    $redirect_url = "http://localhost:3333/$provider/auth";
+    $redirect_url = "http://wowauthlytics.co/$provider/auth";
 
     $data = array('name' => $provider, 'account_id' => $account->id);
     $auth_data = require $auth_script;
