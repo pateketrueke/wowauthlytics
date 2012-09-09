@@ -12,5 +12,5 @@ if ( ! $session) {
   $rest = new MC_RestClient($session);
   $meta = $rest->getMetadata();
 
-  return array('acces_token' => $session['access_token'], 'dc' => $meta['dc']);
+  return array('access_token' => $session['access_token'], 'dc' => $meta['dc']);
 }
