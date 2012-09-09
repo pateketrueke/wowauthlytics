@@ -1,9 +1,0 @@
-h1
-  - if ! $delete && ! $update
-    Your service for '#{$provider}' is now registered!
-  - elseif $delete
-    Your service '#{$provider}'.'#{$delete}' was deleted!
-  - elseif $update
-    Your service '#{$provider}'.'#{$update}' was updated!
-  - else
-    Unknown error
