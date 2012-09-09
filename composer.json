@@ -2,7 +2,7 @@
     "require": {
         "simonchrz/mailchimp": "dev-master",
         "facebook/php-sdk": "dev-master",
-        "dg/twitter-php": "dev-master",
+        "oyatel/twitter-async": "dev-master",
         "zend/gdata": "dev-master",
 
         "habanero/broil": "dev-master",
