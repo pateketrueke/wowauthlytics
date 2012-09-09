@@ -10,7 +10,7 @@ if ( ! $session) {
   echo '<a href="' . $client->getLoginUri() . '">Login</a>';
 } else {
   $rest = new MC_RestClient($session);
-  $data = $rest->getMetadata();
+  $meta = $rest->getMetadata();
 
-  return array('acces_token' => $session['access_token'], 'dc' => $data['dc']);
+  return array('acces_token' => $session['access_token'], 'dc' => $meta['dc']);
 }
