@@ -9,7 +9,7 @@ if ( ! $exists) {
 }
 
 
-$account = $db['account']->where($data)->select()->fetch();
+$account = $db['account']->select('*', $data)->fetch();
 $data = array('name' => $provider, 'account_id' => $account->id);
 $exists = $db['provider']->where($data)->count();
 
@@ -20,7 +20,7 @@ switch ($action) {
         if ( ! $exists) {
           return array('error' => "no $provider provider");
         } else {
-          $provider = $db['provider']->where($data)->select()->fetch();
+          $provider = $db['provider']->select('*', $data)->fetch();
 
           $result = array('found' => TRUE);
           $result['services'] = array();

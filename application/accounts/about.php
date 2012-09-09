@@ -7,7 +7,7 @@ $exists = $db['account']->where($data)->count();
 if ( ! $exists) {
   return array('error' => 'not exists');
 } else {
-  $account = $db['account']->where($data)->select()->fetch();
+  $account = $db['account']->select('*', $data)->fetch();
   $result = array('found' => TRUE, 'hash' => $account->unique_hash);
 
   $result['providers'] = array();

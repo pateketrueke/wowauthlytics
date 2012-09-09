@@ -4,13 +4,13 @@ $vars = compact('provider');
 $vars['hash'] = $account->unique_hash;
 
 $data = array('name' => $provider, 'account_id' => $account->id);
-$provider = $db['provider']->where($data)->select()->fetch();
+$provider = $db['provider']->select('*', $data)->fetch();
 
 $data = array('name' => $action, 'provider_id' => $provider->id);
 $exists = $db['service']->where($data)->count();
 
 $vars['name'] = $action;
-$vars['service'] = $db['service']->where($data)->select()->fetch();
+$vars['service'] = $db['service']->select('*', $data)->fetch();
 
 switch ($method) {
   case 'GET';
