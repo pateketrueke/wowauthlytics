@@ -84,5 +84,7 @@ switch ($action) {
       unset($params['id']);
     }
 
+    $data = $db['provider']->select('*', $data)->fetch();
+
     return require $data_script;
 }
