@@ -1,3 +1,4 @@
 vendor
+requires
 composer.lock
 application/database/db.sqlite
