@@ -15,11 +15,11 @@ $service = new GoogleApi\Contrib\apiAnalyticsService($client);
 
 if (isset($_GET['code'])) {
   $client->authenticate();
-  return array('access_token' => $client->getAccessToken());
+  return $client->getAccessToken();
 }
 
 if ($client->getAccessToken()) {
-  return array('access_token' => $client->getAccessToken());
+  return $client->getAccessToken();
 } else {
   $login_url = $client->createAuthUrl();
 }
