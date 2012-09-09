@@ -1,0 +1,9 @@
+h1
+  Are you sure?
+
+form { action => url("$provider/$name?id=$hash"), method => 'post' }
+  input { type => 'hidden', name => '_method', value => 'delete' }
+  input { type => 'submit', name => 'confirm', value => 'Im sure!' }
+
+a { href => url("$provider/$name?id=$hash") }
+  Cancel

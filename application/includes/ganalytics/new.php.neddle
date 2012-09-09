@@ -1,0 +1,12 @@
+h1
+  Create new '#{$provider}' service
+
+form { action => url("$provider/$name?id=$hash"), method => 'post' }
+  .field
+    input { type => 'text', name => 'params[key]', placeholder => 'Key' }
+  .field
+    input { type => 'text', name => 'params[secret]', placeholder => 'Secret' }
+  .field
+    input { type => 'text', name => 'params[dev_key]', placeholder => 'Dev-key' }
+  .field.right
+    input { type => 'submit', value => 'Save' }
