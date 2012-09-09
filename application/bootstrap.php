@@ -31,7 +31,7 @@ $provider_callback = function ($provider, $action = 'hook', $item = '') {
     $status = 200;
     $headers = array();
     $method = Broil\Config::get('request_method');
-    $result = require 'providers/main.php';
+    $result = require 'providers/common.php';
 
     if (is_array($result)) {
       return as_json($result);

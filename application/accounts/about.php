@@ -8,7 +8,7 @@ if ( ! $exists) {
   return array('error' => 'not exists');
 } else {
   $account = $db['account']->select('*', $data)->fetch();
-  $result = array('found' => TRUE, 'hash' => $account->unique_hash);
+  $result = array('found' => TRUE);
 
   $result['providers'] = array();
 

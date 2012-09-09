@@ -9,6 +9,7 @@ $account = array(
 $provider = array(
     'id' => array('primary_key'),
     'name' => array('string'),
+    'params' => array('text'),
     'account_id' => array('integer'),
   );
 
