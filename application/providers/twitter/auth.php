@@ -6,5 +6,6 @@ if(empty($_GET['oauth_token'])) {
   $login_url = $client->getAuthorizationUrl();
 } else {
   $client->setToken($_GET['oauth_token']);
-  return (array) $client->getAccessToken();
+  $token = $client->getAccessToken();
+  return array('oauth_token' => $token->oauth_token, 'oauth_token_secret' => $token->oauth_token_secret);
 }
