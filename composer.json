@@ -1,8 +1,5 @@
 {
     "require": {
-        "kriswallsmith/buzz": "dev-master",
-        "widop/http-adapter-bundle": "dev-master",
-        "widop/google-analytics-bundle": "dev-master",
         "simonchrz/mailchimp": "dev-master",
         "facebook/php-sdk": "dev-master",
         "dg/twitter-php": "dev-master",
@@ -10,6 +7,8 @@
 
         "habanero/broil": "dev-master",
         "habanero/tailor": "dev-master",
-        "habanero/postman": "dev-master"
+        "habanero/postman": "dev-master",
+
+        "evert/google-api-php-client": "dev-master"
     }
 }
