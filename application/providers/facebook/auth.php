@@ -7,8 +7,8 @@ $client = new Facebook(array(
 ));
 
 
-if ($test = $client->getUser()) {
-  return array('me' => $test);
+if ($client->getUser()) {
+  return $client->getAccessToken();
 } else {
   $login_url = $client->getLoginUrl(array('scope' => 'read_insights'));
 }
