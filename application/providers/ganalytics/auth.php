@@ -6,7 +6,7 @@ $client->setApplicationName('Wowauthlytics!');
 
 $client->setClientId(GANALYTICS_CLIENT_ID);
 $client->setClientSecret(GANALYTICS_CLIENT_SECRET);
-$client->setDeveloperKey(GANALYTICS_DEVELOPER_KEY);
+$client->setDeveloperKey(GOOGLE_DEVELOPER_KEY);
 
 $client->setRedirectUri($redirect_url);
 $client->setScopes(array('https://www.googleapis.com/auth/analytics.readonly'));
