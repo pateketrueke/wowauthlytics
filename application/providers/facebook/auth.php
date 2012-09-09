@@ -10,5 +10,5 @@ $client = new Facebook(array(
 if ($test = $client->getUser()) {
   return array('me' => $test);
 } else {
-  echo '<a href="' . $client->getLoginUrl(array('scope' => 'read_insights')) . '">Login</a>';
+  $login_url = $client->getLoginUrl(array('scope' => 'read_insights'));
 }

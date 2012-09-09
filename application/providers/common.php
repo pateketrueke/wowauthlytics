@@ -75,7 +75,7 @@ switch ($action) {
       redirect(url("$provider?id=$user_id"));
     }
 
-    return partial('missing.php', compact('provider'));
+    return partial('missing.php', compact('provider', 'login_url'));
   case 'data';
     $params = $_GET;
     $data_script = "$provider/data.php";

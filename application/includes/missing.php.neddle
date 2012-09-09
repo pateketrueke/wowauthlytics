@@ -1,2 +1,5 @@
 h1
-  Missing '#{$provider}' service.
+  The '#{$provider}' service.
+
+a { href => $login_url }
+  Click here to login!

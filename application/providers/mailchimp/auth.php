@@ -7,7 +7,7 @@ $client = new MC_OAuth2Client();
 $session = $client->getSession();
 
 if ( ! $session) {
-  echo '<a href="' . $client->getLoginUri() . '">Login</a>';
+  $login_url = $client->getLoginUri();
 } else {
   $rest = new MC_RestClient($session);
   $meta = $rest->getMetadata();

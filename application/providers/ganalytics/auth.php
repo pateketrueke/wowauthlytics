@@ -21,5 +21,5 @@ if (isset($_GET['code'])) {
 if ($client->getAccessToken()) {
   return array('access_token' => $client->getAccessToken());
 } else {
-  echo '<a href="' . $client->createAuthUrl() . '">Login</a>';
+  $login_url = $client->createAuthUrl();
 }
