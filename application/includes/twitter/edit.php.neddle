@@ -1,0 +1,13 @@
+- $config = json_decode($service->config)
+
+form { action => url("$provider/$name?id=$hash"), method => 'post' }
+  input { type => 'hidden', name => '_method', value => 'put' }
+  .field
+    input { type => 'text', name => 'params[key]', placeholder => 'Key', value => $config->key }
+  .field
+    input { type => 'text', name => 'params[secret]', placeholder => 'Secret', value => $config->secret }
+  .field.right
+    input { type => 'submit', value => 'Save' }
+
+a { href => url("$provider/$name?id=$hash") }
+  Cancel
