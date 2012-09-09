@@ -2,9 +2,7 @@
 
 require 'config.php';
 date_default_timezone_set('UTC');
-
-$loader = require 'vendor/autoload.php';
-$loader->add('Grocery', __DIR__.'/requires/grocery/lib/');
+$autoload = require 'vendor/autoload.php';
 
 Broil\Config::set('rewrite', TRUE);
 Broil\Config::set('request_uri', ! empty($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/');
