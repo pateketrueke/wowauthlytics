@@ -8,13 +8,16 @@ $client = new Facebook(array(
   'cookie' => FALSE,
 ));
 
-$me = $client->setAccessToken($raw)->getUser();
-$app = ! empty($params['app_id']) ? $params['app_id'] : $me;
 
-if ( ! empty($params['request_path'])) {
-  $data = $client->api(strtr($params['request_path'], '.', '/'));
-} else {
-  $data = $client->api("/$app/insights/application_active_users");
+$client->setAccessToken($raw);
+
+if ( ! empty($params['app'])) {
+  if ( ! empty($params['path'])) {
+    $data = $client->api("/{$params['app']}/insights/" . strtr($params['path'], '.', '/'));
+  } else {
+    $data = $client->api("/{$params['app']}/insights/application_active_users");
+  }
+  return $data;
 }
 
-return $data;
+return array('error' => 'missing app param');
