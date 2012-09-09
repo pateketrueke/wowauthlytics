@@ -2,7 +2,6 @@
 
 require_once('libraries/mailchimp/MC_OAuth2Client.php');
 require_once('libraries/mailchimp/MC_RestClient.php');
-require_once('libraries/mailchimp/miniMCAPI.class.php');
 
 $client = new MC_OAuth2Client();
 $session = $client->getSession();
