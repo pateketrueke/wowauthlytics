@@ -18,14 +18,14 @@ if ( ! empty($params['ga'])) {
   $service = new GoogleApi\Contrib\apiAnalyticsService($client);
   $data = $service->data_ga->get(
           "ga:{$params['ga']}",
-          '2010-01-01',
-          '2010-01-15',
-          'ga:visits',
+          ! empty($params['since']) ? $params['since'] : date('Y-m-d', strtotime('-1 month')),
+          ! empty($params['to']) ? $params['to'] : date('Y-m-d'),
+          ! empty($params['type']) ? $params['type'] : 'ga:visits',
           array(
-              'dimensions' => 'ga:source,ga:keyword',
-              'sort' => '-ga:visits,ga:keyword',
-              'filters' => 'ga:medium==organic',
-              'max-results' => '25'));
+              'dimensions' => ! empty($params['dims']) ? $params['dims'] : 'ga:source,ga:keyword',
+              'sort' => ! empty($params['sort']) ? $params['sort'] : '-ga:visits,ga:month',
+              'filters' => ! empty($params['filter']) ? $params['filter'] : 'ga:medium==organic',
+              'max-results' => ! empty($params['max']) ? $params['max'] : 100));
 
   return $data;
 }
